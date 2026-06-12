@@ -16,13 +16,11 @@
 
 
 def solve(id: str) -> int:
-    """
-    Implement your task here.
-    Your id is passed as a string.
-    Return an integer.
-    """
-    pass
-
+    
+    digits = [int(c) for c in id if c.isdigit()]
+    even_sum = sum(d for d in digits if d % 2 == 0)
+    odd_sum = sum(d for d in digits if d % 2 != 0)
+    return abs(even_sum - odd_sum)
 
 if __name__ == "__main__":
     print(solve("52552"))
